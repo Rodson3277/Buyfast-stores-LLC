@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Essential meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Trustpilot Widget Script - loaded after page is idle to avoid blocking FCP -->
+    <script>
+      if (window.requestIdleCallback) {
+        requestIdleCallback(function() {
+          var s = document.createElement('script');
+          s.src = 'https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js';
+          s.async = true;
+          document.head.appendChild(s);
+        }, { timeout: 4000 });
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            var s = document.createElement('script');
+            s.src = 'https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js';
+            s.async = true;
+            document.head.appendChild(s);
+          }, 2000);
+        });
+      }
+    </script>
+    <!-- CSP is managed server-side in server/index.ts to avoid duplicate CSP conflicts -->
+    <title>BuyFast TopUp | Mobile Top-Up / Airtime Recharge | Digital Utilities / Bill Payments</title>
+    <meta name="description" content="Mobile Top-Up / Airtime Recharge and Digital Utilities / Bill Payments with supported operators and billers.">
+    <meta name="keywords" content="Mobile Top-Up / Airtime Recharge, Digital Utilities / Bill Payments, mobile recharge, utility bills, Digicel, Natcom, BuyFast TopUp">
+    <link rel="canonical" href="https://buyfasttopup.com/">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="BUYFAST STORES LLC">
+    <meta name="generator" content="BuyFast Worldwide v2.0">
+
+    <!-- Favicons - BuyFast Logo with International Flags -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="48x48" href="/icons/icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/icons/icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="/icons/icon-256x256.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/jpeg" href="/logo-buyfast-favicon.jpg">
+    <meta name="theme-color" content="#00424C">
+    <meta name="msapplication-TileColor" content="#00424C">
+    <meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+    <meta name="mask-icon" href="/icons/maskable-icon-512x512.png" color="#00424C">
+
+    <!-- PWA / manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="BuyFast Worldwide">
+    <meta name="apple-mobile-web-app-title" content="BuyFast Worldwide">
+
+    <!-- Open Graph (Facebook/WhatsApp/LinkedIn) - Multi-Language Support -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buyfasttopup.com/">
+    <meta property="og:title" content="BuyFast TopUp | Mobile Top-Up / Airtime Recharge | Digital Utilities / Bill Payments">
+    <meta property="og:description" content="Mobile Top-Up / Airtime Recharge and Digital Utilities / Bill Payments with supported operators and billers.">
+    <meta property="og:site_name" content="BuyFast Worldwide">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ht_HT">
+    <meta property="og:image" content="https://buyfasttopup.com/icons/icon-512x512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="BuyFast Worldwide - Digital Financial Services with Country Flags">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BuyFast TopUp | Mobile Top-Up / Airtime Recharge | Digital Utilities / Bill Payments">
+    <meta name="twitter:description" content="Mobile Top-Up / Airtime Recharge and Digital Utilities / Bill Payments with supported operators and billers.">
+    <meta name="twitter:image" content="https://buyfasttopup.com/icons/icon-512x512.png">
+    <meta name="twitter:image:alt" content="BuyFast Worldwide - Digital Financial Services">
+    <meta name="twitter:site" content="@buyfastworld">
+    <meta name="twitter:creator" content="@buyfastworld">
+
+    <!-- Language Support - Multi-Language (English, Français, Español, Kreyòl Ayisyen) -->
+    <link rel="alternate" href="https://buyfasttopup.com/" hreflang="x-default">
+    <link rel="alternate" href="https://buyfasttopup.com/?lang=en" hreflang="en">
+    <link rel="alternate" href="https://buyfasttopup.com/?lang=fr" hreflang="fr">
+    <link rel="alternate" href="https://buyfasttopup.com/?lang=es" hreflang="es">
+    <link rel="alternate" href="https://buyfasttopup.com/?lang=ht" hreflang="ht">
+    <meta name="content-language" content="en,fr,es,ht">
+
+    <!-- Performance / Preload - Only 2 preconnects (fonts critical path) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <!-- DNS-prefetch only for non-critical origins (cheaper than preconnect) -->
+    <link rel="dns-prefetch" href="https://identitytoolkit.googleapis.com">
+    <link rel="dns-prefetch" href="https://securetoken.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.paypal.com">
+    <link rel="dns-prefetch" href="https://js.stripe.com">
+    <link rel="dns-prefetch" href="https://api.reloadly.com">
+    <link rel="dns-prefetch" href="https://api.exchangerate-api.com">
+    <link rel="dns-prefetch" href="https://widget.trustpilot.com">
+    <link rel="dns-prefetch" href="https://flagcdn.com">
+    <link rel="preload" as="image" href="/logo.webp" fetchpriority="high" type="image/webp">
+    <link rel="preload" as="image" href="/hero-banner.webp" fetchpriority="high" type="image/webp">
+
+    <!-- Color Scheme -->
+    <meta name="color-scheme" content="light">
+
+    <!-- Structured Data (SEO rich results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BuyFast TopUp",
+      "url": "https://buyfasttopup.com/",
+      "logo": "https://buyfasttopup.com/icons/icon-512x512.png",
+      "sameAs": ["https://www.facebook.com/share/16RGVsMtcu/","https://www.instagram.com/buyfast_topup","https://youtube.com/@buyfasttop","https://www.tiktok.com/@buyfasttopup","https://x.com/BuyFasttopup","https://www.linkedin.com/company/buyfasttopup"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2125 Biscayne Blvd STE 204 #17531",
+        "addressLocality": "Miami",
+        "addressRegion": "FL",
+        "postalCode": "33137",
+        "addressCountry": "US"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "BuyFast TopUp",
+      "url": "https://buyfasttopup.com/",
+      "logo": "https://buyfasttopup.com/icons/icon-512x512.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2125 Biscayne Blvd STE 204 #17531",
+        "addressLocality": "Miami",
+        "addressRegion": "FL",
+        "postalCode": "33137",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "25.7617",
+        "longitude": "-80.1918"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "priceRange": "$"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://buyfasttopup.com/",
+      "name": "BuyFast TopUp",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://buyfasttopup.com/search?q={query}",
+        "query-input": "required name=query"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Mobile Top-Up / Airtime Recharge",
+      "provider": { "@type": "Organization", "name": "BuyFast TopUp" },
+      "areaServed": ["United States", "Canada", "Haiti", "Dominican Republic", "Jamaica", "Mexico", "Brazil", "France", "United Kingdom", "Worldwide"],
+      "description": "Mobile Top-Up / Airtime Recharge with supported mobile operators. Review available products and pricing before purchase.",
+      "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "1.00", "availability": "https://schema.org/InStock" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "BuyFast TopUp",
+      "alternateName": ["Mobile Top-Up / Airtime Recharge", "Digital Utilities / Bill Payments"],
+      "description": "Mobile Top-Up / Airtime Recharge and Digital Utilities / Bill Payments with supported operators and billers.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "url": "https://buyfasttopup.com/",
+      "screenshot": "https://buyfasttopup.com/icons/icon-512x512.png",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1247",
+        "bestRating": "5"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "BuyFast TopUp | Mobile Top-Up / Airtime Recharge | Digital Utilities / Bill Payments",
+      "description": "Mobile Top-Up / Airtime Recharge and Digital Utilities / Bill Payments with supported operators and billers.",
+      "about": [
+        {
+          "@type": "Service",
+          "name": "Mobile Top-Up / Airtime Recharge",
+          "provider": { "@type": "Organization", "name": "BuyFast TopUp" }
+        },
+        {
+          "@type": "Service",
+          "name": "Digital Utilities / Bill Payments",
+          "provider": { "@type": "Organization", "name": "BuyFast TopUp" }
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "Ding",
+          "sameAs": "https://www.ding.com"
+        },
+        {
+          "@type": "Organization", 
+          "name": "Digicel Haiti"
+        },
+        {
+          "@type": "Organization",
+          "name": "Natcom Haiti"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQ Schema — enables rich results (expanded Q&A) in Google SERP -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I send airtime or top up a phone internationally?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BuyFast TopUp lets you send airtime, mobile recharge, and phone credit to 169+ countries in seconds. Select the country, enter the phone number, choose the amount, and pay with PayPal or card. Instant top up delivery to Digicel, Natcom, AT&T, T-Mobile, Claro, Orange, and 800+ operators worldwide. No account required for guest top up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I pay utility bills online with BuyFast TopUp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! BuyFast TopUp's bill payment app lets you pay electricity, water, internet, and phone bills online instantly. Supports 600+ billers worldwide. Fast, secure bill payment with instant confirmation via email and SMS. Pay bills anywhere, anytime — no delay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I check before buying airtime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check the recipient phone number, country, operator, product details, and total price before confirming your Mobile Top-Up / Airtime Recharge purchase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What payment methods are accepted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BuyFast TopUp accepts PayPal, Visa, Mastercard, American Express, and Discover. All payments are secured with 256-bit SSL encryption, 3D Secure authentication, and PCI-DSS compliance. Safe, secure online payment service worldwide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best app to send mobile top-up to Haiti?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BuyFast TopUp offers Mobile Top-Up / Airtime Recharge for supported Digicel Haiti and Natcom mobile numbers. Check available products and prices before purchase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is BuyFast TopUp safe and legitimate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BuyFast TopUp is operated by BUYFAST STORES LLC in Miami, Florida. Review our terms, privacy policy, and support information before purchasing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the fees for international top-up?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Review the product price, applicable fees, and total shown at checkout before confirming your purchase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use BuyFast TopUp without creating an account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Guest Top-Up lets you purchase mobile airtime without creating an account. Enter the mobile number, select an available product, and review checkout details. Other services may require an account."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What countries does BuyFast TopUp support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BuyFast TopUp supports mobile top-up in 169+ countries including Haiti, Jamaica, Dominican Republic, Nigeria, Ghana, Senegal, Morocco, India, Bangladesh, Philippines, Mexico, Colombia, and many more. We cover major carriers in all regions: Africa, Caribbean, Latin America, South Asia, and Southeast Asia."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList schema for navigation SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://buyfasttopup.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Mobile Top-Up / Airtime Recharge", "item": "https://buyfasttopup.com/guest-topup" },
+        { "@type": "ListItem", "position": 3, "name": "Digital Utilities / Bill Payments", "item": "https://buyfasttopup.com/bill-payment" }
+      ]
+    }
+    </script>
+
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Additional PWA Meta Tags -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#00424C">
+    <meta name="msapplication-navbutton-color" content="#00424C">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
+    <!-- Additional Browser Support -->
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    
+    <!-- Geolocation -->  
+    <meta name="geo.region" content="US-FL">
+    <meta name="geo.placename" content="Miami">
+    <meta name="geo.position" content="25.7617;-80.1918">
+    <meta name="ICBM" content="25.7617, -80.1918">
+
+    <!-- Fonts - async loaded -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Facebook Pixel - deferred to after page load to avoid blocking LCP -->
+    <script>
+      window.addEventListener('load', function() {
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1442392407326477');
+        fbq('track', 'PageView');
+      });
+    </script>
+    <!-- Google Analytics 4 + Ads — deferred to after idle to avoid blocking FCP/LCP -->
+    <script>
+      (function() {
+        function loadGA() {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-00G3JVQSP8';
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){dataLayer.push(arguments);};
+          gtag('js', new Date());
+          gtag('config', 'G-00G3JVQSP8');
+          gtag('config', 'AW-18072320775');
+        }
+        if (window.requestIdleCallback) {
+          requestIdleCallback(loadGA, { timeout: 5000 });
+        } else {
+          window.addEventListener('load', function() { setTimeout(loadGA, 3000); });
+        }
+      })();
+    </script>
+  <!-- Spinner animation inline in head so initial loader animates before JS loads -->
+  <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+  </head>
+  <body class="m-0 p-0 bg-white" style="font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1442392407326477&ev=PageView&noscript=1" alt=""/></noscript>
+    <noscript>
+      <div style="max-width:800px;margin:0 auto;padding:40px 20px;font-family:Inter,sans-serif">
+        <div style="color:#00424C;text-align:center;font-size:1.8em;font-weight:bold;margin-bottom:1rem">BuyFast TopUp | Mobile Top-Up / Airtime Recharge</div>
+        <p style="text-align:center;color:#333;font-size:16px">Mobile Top-Up / Airtime Recharge and Digital Utilities / Bill Payments with supported operators and billers.</p>
+        <h2 style="color:#00424C">Mobile Top-Up / Airtime Recharge</h2>
+        <p>Send airtime to 169+ countries with 800+ operators including Digicel, Natcom, AT&amp;T, T-Mobile, Claro, and Orange. Instant delivery worldwide.</p>
+        <h2 style="color:#00424C">Digital Utilities / Bill Payments</h2>
+        <p>Pay utility bills, internet, and phone bills in Haiti and worldwide. Support for 600+ billers across multiple countries.</p>
+        <h2 style="color:#00424C">Secure Payments</h2>
+        <p>Pay securely with credit card, debit card, or PayPal. All transactions protected with 3D Secure authentication, 256-bit SSL encryption, and PCI-DSS compliance.</p>
+        <div itemscope itemtype="https://schema.org/LocalBusiness" style="margin-top:30px;padding:20px;border-top:1px solid #eee">
+          <p style="font-weight:bold;color:#00424C" itemprop="name">BUYFAST STORES LLC</p>
+          <p style="color:#333;font-size:14px" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="streetAddress">2125 Biscayne Blvd STE 204 #17531</span>,
+            <span itemprop="addressLocality">Miami</span>,
+            <span itemprop="addressRegion">FL</span>
+            <span itemprop="postalCode">33137</span>,
+            <span itemprop="addressCountry">US</span>
+          </p>
+          <p style="color:#333;font-size:14px">Support: <a href="https://buyfasttopup.com/support">Chat Bot Support</a></p>
+          <p style="color:#333;font-size:14px">Email: support [at] buyfasttopup.com</p>
+          <meta itemprop="url" content="https://buyfasttopup.com" />
+        </div>
+      </div>
+    </noscript>
+    <div id="root" style="width: 100% !important; height: 100% !important; margin: 0 !important; padding: 0 !important;">
+      <!-- Initial Loading Screen - Shows immediately before React loads -->
+      <div id="initial-loader" style="position: fixed; inset: 0; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #FFFFFF;">
+        <div style="width: 100px; height: 100px; border-radius: 50%; border: 4px solid #D6F000; border-top-color: #00424C; animation: spin 1s linear infinite;"></div>
+        <p style="margin-top: 20px; font-size: 18px; font-weight: 600; color: #00424C;">BuyFast TopUp</p>
+        <p style="margin-top: 8px; font-size: 14px; color: #5A5A5A;">Loading...</p>
+      </div>
+      <!-- Static SEO Content for AI Crawlers & Search Engines - React replaces this on mount -->
+      <!-- visibility:hidden keeps it readable by crawlers but invisible to users until React loads -->
+      <div id="seo-content" style="max-width:900px;margin:0 auto;padding:40px 20px;font-family:Inter,system-ui,sans-serif;color:#333;visibility:hidden;">
+        <header style="text-align:center;margin-bottom:30px;">
+          <h1 style="color:#00424C;font-size:28px;margin-bottom:10px;">BuyFast TopUp — Mobile Top-Up / Airtime Recharge and Digital Utilities / Bill Payments</h1>
+          <p style="font-size:16px;color:#555;max-width:700px;margin:0 auto;">Send mobile top-ups to 169+ countries with 800+ operators. Pay with credit card, debit card, or PayPal. Fast, secure digital financial services by BUYFAST STORES LLC.</p>
+        </header>
+        
+        <section style="margin-bottom:40px;">
+          <h2 style="color:#00424C;font-size:20px;border-bottom:2px solid #D6F000;padding-bottom:8px;margin-bottom:15px;">Mobile Top-Up / Airtime Recharge</h2>
+          <p style="margin-bottom:12px;line-height:1.6;">Send airtime instantly to 169+ countries with 800+ operators including Digicel Haiti, Natcom, AT&amp;T, T-Mobile, Claro, Orange, MTN, Airtel, and Vodafone. BuyFast TopUp is the fastest way to recharge phones internationally with instant delivery available 24/7.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Why Choose BuyFast TopUp for Mobile Recharge?</strong> We offer competitive rates, instant delivery confirmation, real-time exchange rates, and support for hundreds of mobile operators worldwide. Whether you need to recharge a phone in Haiti, the Dominican Republic, Jamaica, or any country globally, BuyFast TopUp delivers faster than competitors like Ding or Reloadly.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Supported Countries:</strong> USA, Canada, Haiti, Dominican Republic, Jamaica, Mexico, Brazil, France, UK, and 169+ more countries.</p>
+          <p style="line-height:1.6;"><strong>Payment Methods:</strong> Credit Card (Visa, Mastercard), Debit Card, PayPal. All payments are secured with 256-bit SSL encryption and 3D Secure authentication.</p>
+        </section>
+
+        <section style="margin-bottom:40px;">
+          <h2 style="color:#00424C;font-size:20px;border-bottom:2px solid #D6F000;padding-bottom:8px;margin-bottom:15px;">Digital Utilities / Bill Payments</h2>
+          <p style="margin-bottom:12px;line-height:1.6;">Pay utility bills, electricity, internet, water, and phone bills in Haiti and worldwide. BuyFast TopUp supports 600+ billers across multiple countries with convenient online bill payment from anywhere.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Haiti Bill Payment:</strong> Pay Digicel bills, Natcom bills, electricity bills (EDH), water bills, internet bills, and other utility payments instantly online.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>International Billers:</strong> Pay bills in USA, Canada, Dominican Republic, Jamaica, Mexico, and 169+ countries worldwide.</p>
+          <p style="line-height:1.6;"><strong>Bill Payment Features:</strong> Instant payment confirmation, automatic bill reminders, payment history tracking, no late fees, secure encrypted transactions, customer support available 24/7.</p>
+        </section>
+
+        <section style="margin-bottom:40px;">
+          <h2 style="color:#00424C;font-size:20px;border-bottom:2px solid #D6F000;padding-bottom:8px;margin-bottom:15px;">Secure Payment Methods &amp; Data Protection</h2>
+          <p style="margin-bottom:12px;line-height:1.6;">All transactions on BuyFast TopUp are protected with enterprise-grade security. Pay securely with credit card, debit card, or PayPal with 3D Secure authentication, 256-bit SSL encryption, and PCI-DSS compliance.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Security Features:</strong> 256-bit SSL encryption for all data transmission, 3D Secure authentication for card payments, PCI-DSS Level 1 compliance (highest standard), Stripe payment processing for credit card safety, PayPal integration for digital wallets.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Fraud Prevention:</strong> Advanced fraud detection, device fingerprinting, IP monitoring, transaction velocity analysis, and 24/7 security monitoring.</p>
+          <p style="line-height:1.6;"><strong>Your Data is Safe:</strong> BuyFast TopUp never stores full credit card numbers, uses tokenization for secure payment processing, complies with GDPR and international data protection laws, and maintains encrypted backups.</p>
+        </section>
+
+        <section style="margin-bottom:40px;">
+          <h2 style="color:#00424C;font-size:20px;border-bottom:2px solid #D6F000;padding-bottom:8px;margin-bottom:15px;">Best Mobile Top-Up App 2025 — Why BuyFast TopUp Beats the Competition</h2>
+          <p style="margin-bottom:12px;line-height:1.6;">Explore Mobile Top-Up / Airtime Recharge with BuyFast TopUp. Compare supported operators, available products, and checkout pricing before purchasing.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>BuyFast vs. Ding:</strong> Up to 60% lower fees (2-3% vs 7%), 6x faster delivery (30 seconds vs 5 minutes), 24/7 Haitian Creole support, no account blocking. <a href="https://buyfasttopup.com/ding-alternative" style="color:#00424C;font-weight:bold;">See full Ding comparison</a></p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Mobile recharge options:</strong> Browse supported mobile operators, products, and pricing before purchasing airtime.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>BuyFast vs. Boss Revolution:</strong> No hidden fees, modern mobile-first app, real-time delivery confirmation, multi-language support. <a href="https://buyfasttopup.com/boss-revolution-alternative" style="color:#00424C;font-weight:bold;">See full Boss Revolution comparison</a></p>
+          <p style="line-height:1.6;"><strong>BuyFast TopUp Advantages:</strong> 169+ country coverage, 800+ mobile operators, 600+ bill payment billers, 24/7 customer support in English, French, Spanish &amp; Haitian Creole, $0.50 welcome bonus for new users. <a href="https://buyfasttopup.com/best-topup-app" style="color:#00424C;font-weight:bold;">See full top 10 comparison</a></p>
+        </section>
+
+        <section style="margin-bottom:40px;">
+          <h2 style="color:#00424C;font-size:20px;border-bottom:2px solid #D6F000;padding-bottom:8px;margin-bottom:15px;">Send Airtime to Haiti — Digicel &amp; Natcom Recharge</h2>
+          <p style="margin-bottom:12px;line-height:1.6;">BuyFast TopUp is the fastest and cheapest way to <strong>send airtime to Haiti</strong>. Recharge Digicel and Natcom phones instantly from the USA, Canada, France, or anywhere in the world.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>How to recharge a phone in Haiti:</strong> 1) Visit BuyFast TopUp, 2) Select Haiti, 3) Choose Digicel or Natcom, 4) Enter the phone number, 5) Select amount in USD or HTG, 6) Pay with credit card, debit card, or PayPal. Delivery is instant!</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Rechaj Digicel Haiti:</strong> Send Digicel credit to any phone in Haiti with the lowest fees. Supports all Digicel plans and data bundles.</p>
+          <p style="line-height:1.6;"><strong>Rechaj Natcom Haiti:</strong> Recharge Natcom (National Telecom) phones instantly with competitive rates. <a href="https://buyfasttopup.com/send-airtime-haiti" style="color:#00424C;font-weight:bold;">Send airtime to Haiti now</a></p>
+        </section>
+
+        <section style="margin-bottom:40px;">
+          <h2 style="color:#00424C;font-size:20px;border-bottom:2px solid #D6F000;padding-bottom:8px;margin-bottom:15px;">About BUYFAST STORES LLC — Financial Services Leader</h2>
+          <p style="margin-bottom:12px;line-height:1.6;">BUYFAST STORES LLC is a registered Florida company (Miami, FL) providing comprehensive digital financial services. Founded by Rodson Deneus, the company focuses on financial inclusion in Haiti and the Caribbean region.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Company Overview:</strong> BuyFast TopUp offers Mobile Top-Up / Airtime Recharge and Digital Utilities / Bill Payments.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Contact Information:</strong></p>
+          <p style="margin-bottom:4px;line-height:1.6;">Address: 2125 Biscayne Blvd STE 204 #17531, Miami, FL 33137, United States</p>
+          <p style="margin-bottom:4px;line-height:1.6;">Email: support@buyfasttopup.com</p>
+          <p style="line-height:1.6;">Website: <a href="https://buyfasttopup.com" style="color:#00424C;text-decoration:none;font-weight:bold;">https://buyfasttopup.com</a></p>
+        </section>
+
+        <section style="margin-bottom:40px;">
+          <h2 style="color:#00424C;font-size:20px;border-bottom:2px solid #D6F000;padding-bottom:8px;margin-bottom:15px;">Leadership — Rodson Deneus, Founder &amp; CEO</h2>
+          <p style="margin-bottom:12px;line-height:1.6;">Rodson Deneus is the Founder and CEO of BUYFAST STORES LLC, leading the company as a trusted digital financial platform serving customers across 169+ countries worldwide.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Vision:</strong> Make mobile airtime recharge and utility bill payments accessible to customers in Haiti and the Caribbean diaspora.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Commitment:</strong> The company prioritizes security, compliance, and financial inclusion, particularly serving the Haitian diaspora and Caribbean communities with accessible, affordable digital financial services.</p>
+          <p style="line-height:1.6;"><strong>Mission:</strong> Empower individuals and families worldwide to manage their finances securely with transparent pricing, excellent customer service, and innovative digital solutions.</p>
+        </section>
+
+        <section style="margin-bottom:40px;">
+          <h2 style="color:#00424C;font-size:20px;border-bottom:2px solid #D6F000;padding-bottom:8px;margin-bottom:15px;">Service Coverage &amp; Supported Countries</h2>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Caribbean Region:</strong> Haiti, Dominican Republic, Jamaica, Puerto Rico, Bahamas, Trinidad &amp; Tobago, Barbados, Grenada, St. Lucia, and more.</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>North America:</strong> USA, Canada, Mexico</p>
+          <p style="margin-bottom:12px;line-height:1.6;"><strong>Europe:</strong> France, UK, Germany, Spain, Italy, Netherlands, and 20+ more countries</p>
+          <p style="line-height:1.6;"><strong>Global:</strong> Brazil, India, Southeast Asia, Africa, Middle East, and 100+ additional countries. Complete 169+ country coverage with 800+ mobile operators globally.</p>
+        </section>
+
+        <footer style="margin-top:40px;padding-top:20px;border-top:1px solid #eee;text-align:center;color:#777;font-size:13px;">
+          <p style="margin-bottom:12px;">&copy; 2025 BUYFAST STORES LLC. All rights reserved. Secure Digital Financial Services Worldwide.</p>
+          <p style="margin-bottom:8px;">
+            <a href="https://buyfasttopup.com/" style="color:#00424C;text-decoration:none;margin:0 8px;">Home</a> | 
+            <a href="https://buyfasttopup.com/about" style="color:#00424C;text-decoration:none;margin:0 8px;">About Us</a> | 
+            <a href="https://buyfasttopup.com/founder" style="color:#00424C;text-decoration:none;margin:0 8px;">Founder</a> | 
+            <a href="https://buyfasttopup.com/blog" style="color:#00424C;text-decoration:none;margin:0 8px;">Blog</a> | 
+            <a href="https://buyfasttopup.com/faq" style="color:#00424C;text-decoration:none;margin:0 8px;">FAQ</a> | 
+            <a href="https://buyfasttopup.com/privacy-policy" style="color:#00424C;text-decoration:none;margin:0 8px;">Privacy Policy</a> | 
+            <a href="https://buyfasttopup.com/terms-of-service" style="color:#00424C;text-decoration:none;margin:0 8px;">Terms of Service</a>
+          </p>
+          <p style="margin-bottom:8px;font-size:12px;">
+            <strong style="color:#00424C;">Compare:</strong>
+            <a href="https://buyfasttopup.com/ding-alternative" style="color:#555;text-decoration:none;margin:0 6px;">Ding Alternative</a> | 
+            <a href="https://buyfasttopup.com/reloadly-alternative" style="color:#555;text-decoration:none;margin:0 6px;">Reloadly Alternative</a> | 
+            <a href="https://buyfasttopup.com/boss-revolution-alternative" style="color:#555;text-decoration:none;margin:0 6px;">Boss Revolution Alternative</a> | 
+            <a href="https://buyfasttopup.com/best-topup-app" style="color:#555;text-decoration:none;margin:0 6px;">Best Top-Up App</a>
+          </p>
+          <p style="font-size:12px;">
+            <strong style="color:#00424C;">Services:</strong>
+            <a href="https://buyfasttopup.com/send-airtime-haiti" style="color:#555;text-decoration:none;margin:0 6px;">Send Airtime to Haiti</a> | 
+            <a href="https://buyfasttopup.com/guest-topup" style="color:#555;text-decoration:none;margin:0 6px;">Quick Top-Up</a> | 
+            <a href="https://buyfasttopup.com/bill-payment" style="color:#555;text-decoration:none;margin:0 6px;">Digital Utilities / Bill Payments</a> |
+            <a href="https://buyfasttopup.com/how-to-recharge" style="color:#555;text-decoration:none;margin:0 6px;">How to Recharge</a>
+          </p>
+        </footer>
+      </div>
+    </div>
+    <script>
+      // Hide initial loader once React mounts - use MutationObserver for reliability
+      (function() {
+        var alreadyHidden = false;
+        var hideLoader = function() {
+          if (alreadyHidden) return;
+          alreadyHidden = true;
+
+          // 🔐 FIX: Immediately hide seo-content BEFORE loader fade starts
+          // Prevents the 300ms window where seo-content becomes visible during fade-out
+          var seoDiv = document.getElementById('seo-content');
+          if (seoDiv) seoDiv.style.display = 'none';
+
+          var loader = document.getElementById('initial-loader');
+          if (loader && loader.parentNode) {
+            loader.style.opacity = '0';
+            loader.style.transition = 'opacity 0.3s ease';
+            setTimeout(function() { 
+              if (loader.parentNode) loader.parentNode.removeChild(loader); 
+            }, 300);
+          }
+        };
+        
+        // 🔐 FIX: Fire on ANY childList mutation (React removes old children when mounting)
+        // Old condition "children.length > 1" never fired because React replaces all children
+        var observer = new MutationObserver(function(mutations) {
+          hideLoader();
+          observer.disconnect();
+        });
+        
+        var root = document.getElementById('root');
+        if (root) observer.observe(root, { childList: true });
+        
+        // Fallback: hide after 5 seconds max (increased from 3s for slow connections)
+        setTimeout(hideLoader, 5000);
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Critical CSS for Initial Render (Inline to prevent blocking) -->
+    <style>
+      /* Reset & Base Styles */
+      *, ::before, ::after { 
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html { 
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      body, html { 
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        color: #1a202c;
+        line-height: 1.5;
+      }
+      
+      #root { 
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Critical Layout Utilities */
+      .min-h-screen { min-height: 100vh; }
+      .w-full { width: 100%; }
+      .h-full { height: 100%; }
+      .flex { display: flex; }
+      .items-center { align-items: center; }
+      .justify-center { justify-content: center; }
+      .text-center { text-align: center; }
+      
+      /* Logo Critical Styles - with explicit dimensions to prevent CLS */
+      .logo-header {
+        display: block;
+        border-radius: 9999px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+        margin: 0 auto;
+        width: 160px;
+        height: 160px;
+      }
+      
+      /* Prevent layout shift for images */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      img[width][height] {
+        aspect-ratio: attr(width) / attr(height);
+      }
+      
+      /* Button Critical Styles */
+      button, .btn, [role="button"], input[type="submit"], input[type="button"] {
+        min-height: 48px;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 12px;
+        padding: 12px 24px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: inherit;
+        transition: all 0.2s ease;
+      }
+      
+      /* Loading State */
+      .loading-spinner {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(214, 240, 0, 0.3);
+        border-top-color: #D6F000;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      /* CSS Variables for Theme */
+      :root {
+        --dark-blue: #00424C;
+        --vibrant-green: #D6F000;
+        --violet-pink: #EC008C;
+        --white: #FFFFFF;
+        --light-blue: #CFF6C5;
+        --text-primary: #1a202c;
+        --text-secondary: #4a5568;
+      }
+    </style>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('💼 SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('❌ SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

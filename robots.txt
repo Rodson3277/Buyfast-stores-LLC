@@ -1,0 +1,67 @@
+User-agent: *
+Allow: /
+Allow: /manifest.json
+Allow: /sw.js
+Allow: /icons/
+Allow: /screenshots/
+Allow: /*.png
+Allow: /*.svg
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.webp
+
+# Disallow sensitive pages
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.env
+Disallow: /server/
+Disallow: /assets/*.js
+Disallow: /assets/*.css
+
+# Allow all public SEO pages
+Allow: /welcome
+Allow: /about
+Allow: /founder
+Allow: /faq
+Allow: /blog
+Allow: /blog/
+Allow: /countries/
+Allow: /guest-topup
+Allow: /ding-alternative
+Allow: /reloadly-alternative
+Allow: /worldremit-alternative
+Allow: /boss-revolution-alternative
+Allow: /best-topup-app
+Allow: /send-airtime-haiti
+Allow: /send-money-haiti
+Allow: /price-calculator
+Allow: /how-to-recharge
+Allow: /reviews
+Allow: /support
+Allow: /terms-of-service
+Allow: /privacy-policy
+Allow: /refunds-policy
+Allow: /anti-fraud-policy
+Allow: /security
+Allow: /compliance-center
+Allow: /topup
+Allow: /signup
+Allow: /login
+
+# Googlebot specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Crawl delay for others
+User-agent: *
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://buyfasttopup.com/sitemap.xml
+Sitemap: https://buyfasttopup.com/sitemap-multilang.xml
